@@ -1,0 +1,16 @@
+POST localhost:8080/XXX.controller.web.v1/login/doLogin
+Content-Type: application/json
+
+{
+  "userName": "13366668888",
+  "password": "123456"
+}
+
+###
+
+GET http://localhost:10101/XXX.controller.web.v1/profile
+
+
+###
+
+

@@ -1,0 +1,51 @@
+server:
+  port: 80
+  servlet:
+    context-path: /ddd
+
+springdoc:
+  swagger-ui:
+    # API 排序
+    tags-sorter: alpha
+    enabled: false
+
+spring:
+  datasource:
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PWD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+  session:
+    redis:
+      configure-action: none
+      namespace: RT-USERCENTER
+    store-type: redis
+
+  data:
+    redis:
+      cluster:
+        nodes: ${REDIS_NODES}
+      password: ${REDIS_PWD}
+      timeout: 3000
+      ssl: true
+
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+
+
+# log
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        web: debug
+    sun:
+      rmi: info
+    com:
+      mqm: debug
+    tk:
+      mybatis: debug
+
